@@ -10,15 +10,20 @@ if ($mysqli->connect_errno) {
 }
 $query = "SELECT * FROM Users WHERE user = '$user' AND pass= '$pass'";
 if($result = $mysqli->query($query)) {
-    echo "<table>";
-    while($user = $result->fetch_assoc()) {
-        echo($user["first_name"]);
-        echo(" ");
+    if($result->num_rows === 0) {
+        $_SESSION["errorMessage"] = "Invalid Credentials you dummy!";
+        header("Location: ./index.php");
+    }
+    else {
+        $user = $result->fetch_assoc();
+        $_SESSION["user"] = $user["user"];
+        $_SESSION["pass"] = $user["user"];
+        $_SESSION["first_name"] = $user["user"];
+        $_SESSION["last_name"] = $user["user"];
+        header("Location: user-dashboard.php");
     }
 }
-if(false) {
-    header("Location: index.php");
-    $_SESSION["user"] = $user;
-    $_SESSION["pass"] = $pass;
+else {
+    echo "an error occurred";
 }
 ?>

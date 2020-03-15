@@ -16,7 +16,15 @@
 				<input type="text" name="username" placeholder="Username"/><br>
 				<i class="fa fa-key icon"></i>
 				<input type="password" name="password" placeholder="Password"/><br>
-				<input type="submit" />
+                <input type="submit" />
+                <?php 
+                if(isset($_SESSION["errorMessage"])) {
+                ?>
+                <div class="error-message"><?php  echo $_SESSION["errorMessage"]; ?></div>
+                <?php 
+                unset($_SESSION["errorMessage"]);
+                } 
+                ?>
 			</form>
 			<a href="#">Forgot Username?</a> | <a href="#">Forgot Password?</a> | <a href="#">New User?</a>
 		</div>

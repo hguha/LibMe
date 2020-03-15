@@ -1,6 +1,8 @@
 <?
-    session_start();
-    echo("<head><link rel='stylesheet' href='style.css'></head>");
-    echo($_SESSION["user"]);
-    echo($_SESSION["pass"]);
+session_start();
+if(!empty($_SESSION["user"])) {
+    require_once './user-dashboard.php';
+} else {
+    require_once './login.php';
+}
 ?>
