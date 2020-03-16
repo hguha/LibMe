@@ -10,6 +10,9 @@ table, th, td {
 body {
 	margin: 0;
 	font-family: sans-serif;
+}
+
+.login-bg {
 	overflow:hidden;
 }
 
