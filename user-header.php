@@ -7,7 +7,7 @@
 
 <div class="header">
 <?echo("<div class='title'>Welcome to LibMe, ".$_SESSION["user"]["first_name"]."!</div>");?>
-<br><a href='./logout.php' class='buttons'>Logout</a>
+<br><a href='environment/logout.php' class='buttons'>Logout</a>
 <br><a href='./user-dashboard.php' class='buttons'>Back To Home</a>
 <form action="book-list.php" method="post">
 <select name="type">

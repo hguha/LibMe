@@ -10,5 +10,5 @@
     if(!$result = $mysqli->query($query)) {
         echo $mysqli->error;
     }
-    header("Location: index.php");
+    header("Location: ../index.php");
 ?>
