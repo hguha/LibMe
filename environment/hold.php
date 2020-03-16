@@ -2,11 +2,13 @@
     include_once "db.php";
     $user_id = $_GET["user"];
     $book_id = $_GET["book"];
-    $query = "INSERT INTO CheckedOut(book_id, user_id) VALUES($book_id, $user_id)";
+    $date = date('Y-m-d H:i:s');
+    $query = "INSERT INTO Held(book_id, user_id, date) VALUES($book_id, $user_id, '$date')";
     if(!$result = $mysqli->query($query)) {
         echo $mysqli->error;
     }
-    $query = "UPDATE Books SET checked_out=$user_id WHERE book_id = $book_id";
+    
+    $query = "UPDATE Books SET on_hold=1 WHERE book_id = $book_id";
     if(!$result = $mysqli->query($query)) {
         echo $mysqli->error;
     }
