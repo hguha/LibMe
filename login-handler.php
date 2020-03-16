@@ -1,15 +1,12 @@
 <?
 session_start();
+include_once "db.php";
 $user = $_POST["username"];
 $pass = $_POST["password"];
 #I wanted to use one login page for the admins and the users for no reason other than convienance.
 #It will be easy to change if that's what we would rather do
 
 #check user database
-$mysqli = new mysqli("mysql.eecs.ku.edu", "hirsh", "libme", "hirsh");
-if ($mysqli->connect_errno) {
-    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-}
 $query = "SELECT * FROM Users WHERE user = '$user' AND pass= '$pass'";
 if($result = $mysqli->query($query)) {
     if($result->num_rows === 0) {
