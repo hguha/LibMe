@@ -1,6 +1,6 @@
 <?
 session_start();
-include_once "db.php";
+include_once "environment/db.php";
 $user = $_POST["username"];
 $pass = $_POST["password"];
 #I wanted to use one login page for the admins and the users for no reason other than convienance.

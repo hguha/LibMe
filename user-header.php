@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <head>
-	<link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="user-dashboard.css">
+	<link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/user-dashboard.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
 </head>
 

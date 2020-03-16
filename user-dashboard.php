@@ -1,6 +1,6 @@
 <?php
 include_once "user-header.php";
-include_once "db.php";
+include_once "environment/db.php";
 
 echo "<div class='content'>";
 $username = $_SESSION['user']['user'];
@@ -20,7 +20,7 @@ if($result = $mysqli->query($query)) {
             echo " ";
             echo $book["last_name"];
             echo "<br>";
-            echo "<a href='return.php?user=".$book["user_id"]."&book=".$book["book_id"]."'>RETURN</a>";
+            echo "<a href='environment/return.php?user=".$book["user_id"]."&book=".$book["book_id"]."'>RETURN</a>";
             // echo "<img src='".($book["image"] !== null ? $book["image"] : "images/default-book-image.jpeg")."'>";
             echo "</div>";
         }

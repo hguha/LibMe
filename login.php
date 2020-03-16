@@ -1,5 +1,5 @@
 <head>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="styles/tyle.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
 </head>
 <body>

@@ -1,5 +1,5 @@
 <?
-include_once "db.php";
+include_once "environment/db.php";
 include_once "user-header.php";
 
 $searchType = $_POST["type"];
@@ -34,7 +34,7 @@ if($result = $mysqli->query($query)) {
             echo " ";
             echo $book["last_name"];
             echo "<br>";
-            echo $book["checked_out"] ? "CHECKED OUT" : "<a href='checkout.php?user=".$_SESSION["user"]["user_id"]."&book=".$book["book_id"]."'>CHECK OUT</a>";
+            echo $book["checked_out"] ? "CHECKED OUT" : "<a href='environment/checkout.php?user=".$_SESSION["user"]["user_id"]."&book=".$book["book_id"]."'>CHECK OUT</a>";
             // echo "<img src='".($book["image"] !== null ? $book["image"] : "images/default-book-image.jpeg")."'>";
             echo "</div>";
         }
