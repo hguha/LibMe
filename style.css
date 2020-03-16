@@ -8,6 +8,7 @@ table, th, td {
 }
 
 body {
+	margin: 0;
 	font-family: sans-serif;
 	overflow:hidden;
 }

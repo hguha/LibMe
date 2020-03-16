@@ -1,0 +1,14 @@
+.header {
+    padding: 2%;
+    background: darkblue;
+    color: white;
+}
+
+.header .title {
+    font-size: 2em;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+}
