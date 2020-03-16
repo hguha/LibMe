@@ -11,6 +11,7 @@ if($result = $mysqli->query($query)) {
     }
     else {
         while($book = $result->fetch_assoc()) {
+            $now = date('Y-m-d H:i:s');
             echo "<div class='book-card'>";
             echo $book["title"];
             echo "<br>";
@@ -20,7 +21,14 @@ if($result = $mysqli->query($query)) {
             echo " ";
             echo $book["last_name"];
             echo "<br>";
-            echo "<a href='environment/return.php?user=".$book["user_id"]."&book=".$book["book_id"]."'>RETURN</a>";
+            echo "DUE: ";
+            if($book["due_date"] <= $now) {
+                echo "PAST DUE";
+            }
+            else {
+                echo (date_format(new DateTime($book["due_date"]), 'm/d/Y'));
+            }
+            echo "<br><a href='environment/return.php?user=".$book["user_id"]."&book=".$book["book_id"]."'>RETURN</a>";
             // echo "<img src='".($book["image"] !== null ? $book["image"] : "images/default-book-image.jpeg")."'>";
             echo "</div>";
         }

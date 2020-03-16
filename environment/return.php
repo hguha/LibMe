@@ -10,7 +10,7 @@
     }
 
     //update the books table to show it's free
-    $query = "UPDATE Books SET checked_out=0 WHERE book_id = $book_id";
+    $query = "UPDATE Books SET checked_out=0, due_date=NULL WHERE book_id = $book_id";
     if(!$result = $mysqli->query($query)) {
         echo $mysqli->error;
     }

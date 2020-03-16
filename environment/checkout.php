@@ -6,7 +6,8 @@
     if(!$result = $mysqli->query($query)) {
         echo $mysqli->error;
     }
-    $query = "UPDATE Books SET checked_out=$user_id WHERE book_id = $book_id";
+    $duedate = date('Y-m-d H:i:s', strtotime(' +2 weeks'));
+    $query = "UPDATE Books SET checked_out=$user_id, due_date='$duedate' WHERE book_id = $book_id";
     if(!$result = $mysqli->query($query)) {
         echo $mysqli->error;
     }
