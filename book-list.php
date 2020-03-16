@@ -1,6 +1,7 @@
 <?
 include_once "db.php";
 include_once "user-header.php";
+
 $searchType = $_POST["type"];
 $content = $_POST["content"];
 switch($searchType) {
@@ -27,13 +28,14 @@ if($result = $mysqli->query($query)) {
             echo "<div class='book-card'>";
             echo $book["title"];
             echo "<br>";
-            echo $book["isbn"];
+            echo "ISBN: ".$book["isbn"];
             echo "<br>";
             echo $book["first_name"];
             echo " ";
             echo $book["last_name"];
-            echo isset($book["image"]);
-            echo "<img src='".($book["image"] !== null ? $book["image"] : "images/default-book-image.jpeg")."'>";
+            echo "<br>";
+            echo $book["checked_out"] ? "CHECKED OUT" : "<a href='checkout.php?user=".$_SESSION["user"]["user_id"]."&book=".$book["book_id"]."'>CHECK OUT</a>";
+            // echo "<img src='".($book["image"] !== null ? $book["image"] : "images/default-book-image.jpeg")."'>";
             echo "</div>";
         }
         echo "</div>";
