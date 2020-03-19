@@ -11,14 +11,19 @@
 		<div class="bg-5"></div>
 		<div class="card">
 			<div class="content">
-				<h1>Login</h1>
-				<form action="login-handler.php" method="POST">
-					<i class="fa fa-user icon"></i>
-					<input type="text" name="username" placeholder="Username"/><br>
+				<h1>Sign Up</h1>
+				<form action="signup-handler.php" method="POST">
+                    <div class="name">
+                        <i class="fa fa-user icon"></i>
+                        <input type="text" name="first_name" placeholder="First Name"/><br>
+                        <input type="text" name="last_name" placeholder="Last Name"/><br>
+                        <input type="text" name="user" placeholder="Username"/><br>
+                    </div>
 					<i class="fa fa-key icon"></i>
-					<input type="password" name="password" placeholder="Password"/><br>
+					<input type="password" name="pass" placeholder="Password"/><br>
+                    <input type="password" name="confirm_pass" placeholder="Confirm Password"/><br>
 					<input type="submit" />
-					<?php 
+                    <?php 
 					if(isset($_SESSION["errorMessage"])) {
 					?>
 					<div class="error-message"><?php  echo $_SESSION["errorMessage"]; ?></div>
@@ -27,7 +32,6 @@
 					} 
 					?>
 				</form>
-				<a href="#">Forgot Username?</a> | <a href="#">Forgot Password?</a> | <a href="signup.php">New User?</a>
 			</div>
 		</div>
 		<div class="footer">What are Footers used for</div>

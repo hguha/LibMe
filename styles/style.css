@@ -10,6 +10,11 @@ table, th, td {
 body {
 	margin: 0;
 	font-family: sans-serif;
+	overflow-x: hidden;
+}
+
+.name {
+	display: inline;
 }
 
 .login-bg {
