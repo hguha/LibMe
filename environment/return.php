@@ -26,13 +26,6 @@
             if(!$result = $mysqli->query($query)) {
                 echo $mysqli->error;
             }
-    
-            if($result->num_rows == 1) {
-                $query = "UPDATE Books SET on_hold=0 WHERE book_id = $book_id";
-                if(!$result = $mysqli->query($query)) {
-                    echo $mysqli->error;
-                }
-            }
             header("Location: ./checkout.php?user=$user_id&book=$book_id");
         }
         else {

@@ -22,6 +22,7 @@ if($result = $mysqli->query($query)) {
                 $user = $result->fetch_assoc();
                 #store user data in the session to be accessed anywhere in the app
                 $_SESSION["user"] = $user;
+                $_SESSION["user_type"] = "admin";
                 header("Location: admin-dashboard.php");
             }
         }
@@ -31,6 +32,7 @@ if($result = $mysqli->query($query)) {
         $user = $result->fetch_assoc();
         #store user data in the session to be accessed anywhere in the app
         $_SESSION["user"] = $user;
+        $_SESSION["user_type"] = "user";
         header("Location: user-dashboard.php");
     }
 }
