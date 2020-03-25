@@ -11,9 +11,9 @@
 <br><a href='environment/logout.php' class='buttons'>Logout</a>
 <br><a href='./user-dashboard.php' class='buttons'>Back To Home</a>
 <form action="book-list.php" method="post">
-<select name="type">
+<select class="select-css" name="type">
     <!-- will enable when I figure out how to actually do keyword searches -->
-  <!-- <option value="keywords">Keyword</option> -->
+  <option value="keywords">Keyword</option>
   <option value="author">Author</option>
   <option value="title">Title</option>
   <option value="isbn">ISBN</option>

@@ -7,10 +7,5 @@
     if(!$result = $mysqli->query($query)) {
         echo $mysqli->error;
     }
-    
-    $query = "UPDATE Books SET on_hold=1 WHERE book_id = $book_id";
-    if(!$result = $mysqli->query($query)) {
-        echo $mysqli->error;
-    }
     header("Location: ../index.php");
 ?>
