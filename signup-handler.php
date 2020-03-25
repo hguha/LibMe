@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 include_once "environment/db.php";
 $fields = array("user", "pass", "first_name", "last_name");

@@ -2,7 +2,6 @@
 //get the data
 include_once "user-header.php";
 include_once "environment/db.php";
-
 //books
 $books = array();
 $username = $_SESSION['user']['user'];
@@ -10,11 +9,13 @@ $query = "SELECT * FROM CheckedOut NATURAL JOIN Books b NATURAL JOIN Users JOIN 
 if($result = $mysqli->query($query)) {
     if($result->num_rows > 0) {
         while($book = $result->fetch_assoc()) {
-            $book["due_date"] = date_format(new DateTime($book["due_date"]), 'm/d/Y');
+            // $book["due_date"] = date_format(new DateTime($book["due_date"]), 'm/d/Y');
             array_push($books, $book);
         }
     }
 }
+echo "got here";
+
 //holds
 $holds = array();
 $query = "SELECT * FROM Held NATURAL JOIN Books b NATURAL JOIN Users JOIN Authors a ON a.author_id = b.author_id WHERE user = '$username'";
@@ -22,14 +23,11 @@ if($result = $mysqli->query($query)) {
     // echo $result->num_rows;exit;
     if($result->num_rows > 0) {
         while($book = $result->fetch_assoc()) {
-            $book["due_date"] = date_format(new DateTime($book["due_date"]), 'm/d/Y');
+            // $book["due_date"] = date_format(new DateTime($book["due_date"]), 'm/d/Y');
             array_push($holds, $book);
         }
     }
 }
-?>
-
-<?
 //display everything so beautifully
     echo "<div class='content'>";
     echo "<div class='row'>";

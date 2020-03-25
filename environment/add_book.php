@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 include_once "db.php";
 $fields = array("title", "description", "isbn");
@@ -30,7 +30,7 @@ if(!isset($book["author_id"])) {
 };
 
 if(isset($_FILES["fileToUpload"])) {
-    $book["image"] = "'".$_FILES["fileToUpload"]["name"]."'";
+    $book["image"] = "'images/".$_FILES["fileToUpload"]["name"]."'";
 };
 $isbn = $book['isbn'];
 $query = "SELECT * FROM Books WHERE isbn=$isbn";

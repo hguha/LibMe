@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 include_once "environment/db.php";
 $user = $_POST["username"];

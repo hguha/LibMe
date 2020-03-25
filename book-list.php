@@ -1,4 +1,4 @@
-<?
+<?php
 include_once "environment/db.php";
 include_once "user-header.php";
 

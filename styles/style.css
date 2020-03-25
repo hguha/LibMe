@@ -22,7 +22,7 @@ body {
 }
 
 
-.card {
+.login-card, .signup-card {
 	z-index: 20;
 	position: absolute;
 	height: 40vh;
@@ -37,6 +37,9 @@ body {
 		rgba(0, 0, 0, 0.3), 0 5px 3px -3px
 		rgba(0, 0, 0, 0.6);
 	padding: 1%;
+}
+.signup-card {
+	height: 50vh;
 }
 
 h3 {
@@ -117,6 +120,18 @@ input[type="submit"]:hover {
 .content a:hover {
 	color: gray;
 }
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .col {
+    float: left;
+    width: 50%;
+    padding: 10px;
+  }
 
 /* BACKGROUND */
 .bg-1 {

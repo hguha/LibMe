@@ -9,7 +9,7 @@
 		<div class="bg-3"></div>
 		<div class="bg-4"></div>
 		<div class="bg-5"></div>
-		<div class="card">
+		<div class="signup-card">
 			<div class="content">
 				<h1>Sign Up</h1>
 				<form action="signup-handler.php" method="POST">
